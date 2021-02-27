@@ -4,11 +4,26 @@
     <title>FirstApp</title>
     <%= csrf_meta_tags %>
 
+    <%= stylesheet_link_tag    'https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css' %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+    <header class="d-flex justify-content-between align-items-center p-3 px-md-4 mb-3 bg-body border-bottom shadow-sm">
+      <p class="h5 my-0 me-md-auto fw-normal">Company name</p>
+      <nav class="my-2 my-md-0 me-md-3 align-self-end">
+        <%= link_to "Blog", posts_path, :class => 'btn btn-light' %>
+        <%= link_to "About", about_path, :class => 'btn btn-light' %>
+        <%= link_to "Contacts", contacts_path, :class => 'btn btn-light' %>
+      </nav>
+    <!--<a class="btn btn-outline-primary" href="#">Sign up</a>-->
+    </header>
+
+    <div class="container">
+        <%= yield %>
+    </div>
+
+
   </body>
 </html>
